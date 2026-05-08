@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sona | Danh Sách Lab</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <style>
+        .lab-section {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background: #f8f9fa;
+        }
+
+        .lab-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(223, 169, 116, 0.15);
+            border-color: #dfa974;
+        }
+
+        .lab-card h4 {
+            color: #19191a;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: "Cabin", sans-serif;
+            border-bottom: 2px solid #dfa974;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .lab-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .lab-card ul li {
+            font-size: 16px;
+            color: #6b6b6b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .lab-card ul li i {
+            color: #dfa974;
+            margin-right: 10px;
+        }
+
+        .lab-btn {
+            display: inline-block;
+            background: #dfa974;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .lab-btn:hover {
+            background: #c98d5a;
+            color: #ffffff;
+        }
+
+        .section-title h2 {
+            font-size: 44px;
+            color: #19191a;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
+        </div>
+        <div class="search-icon search-switch">
+            <i class="icon_search"></i>
+        </div>
+        <div class="header-configure-area">
+            <div class="language-option">
+                <img src="img/flag.jpg" alt="">
+                <span>VN <i class="fa fa-angle-down"></i></span>
+                <div class="flag-dropdown">
+                    <ul>
+                        <li><a href="#">VN</a></li>
+                        <li><a href="#">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="bk-btn">Đặt Phòng Ngay</a>
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+                <li><a href="./index.html">Trang Chủ</a></li>
+                <li><a href="./rooms.html">Phòng Nghỉ</a></li>
+                <li><a href="./about-us.html">Giới Thiệu</a></li>
+                <li><a href="#">Tiện ÍCH</a>
+                    <ul class="dropdown">
+                        <li><a href="./room-details.html">Chi Tiết Phòng</a></li>
+                        <li><a href="./blog-details.html">Chi Tiết Tin Tức</a></li>
+                        <li><a href="#">Phòng Gia Đình</a></li>
+                        <li><a href="#">Phòng Cao Cấp</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog.html">Tin Tức</a></li>
+                <li><a href="./contact.html">Liên Hệ</a></li>
+                <li class="active"><a href="./labs.html">Lab</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="top-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        <ul class="top-widget">
+            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
+            <li><i class="fa fa-envelope"></i> info.sonahotel@gmail.com</li>
+        </ul>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="tn-left">
+                            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
+                            <li><i class="fa fa-envelope"></i> info.sonahotel@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tn-right">
+                            <div class="top-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <a href="#" class="bk-btn">Đặt Phòng Ngay</a>
+                            <div class="language-option">
+                                <img src="img/flag.jpg" alt="">
+                                <span>VN <i class="fa fa-angle-down"></i></span>
+                                <div class="flag-dropdown">
+                                    <ul>
+                                        <li><a href="#">VN</a></li>
+                                        <li><a href="#">EN</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <ul>
+                                    <li><a href="./index.html">Trang Chủ</a></li>
+                                    <li><a href="./rooms.html">Phòng Nghỉ</a></li>
+                                    <li><a href="./about-us.html">Giới Thiệu</a></li>
+                                    <li><a href="#">Tiện ÍCH</a>
+                                        <ul class="dropdown">
+                                            <li><a href="./room-details.html">Chi Tiết Phòng</a></li>
+                                            <li><a href="./blog-details.html">Chi Tiết Tin Tức</a></li>
+                                            <li><a href="#">Phòng Gia Đình</a></li>
+                                            <li><a href="#">Phòng Cao Cấp</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="./blog.html">Tin Tức</a></li>
+                                    <li><a href="./contact.html">Liên Hệ</a></li>
+                                    <li class="active"><a href="./labs.html">Lab</a></li>
+                                </ul>
+                            </nav>
+                            <div class="nav-right search-switch">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Lab Thực Hành</h2>
+                        <div class="bt-option">
+                            <a href="./index.html">Trang Chủ</a>
+                            <span>Lab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lab Section Begin -->
+    <section class="lab-section">
+        <div class="container">
+            <div class="row">
+                <!-- Lab 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 01: HTML Cơ Bản</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Cấu trúc HTML</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Thẻ định dạng văn bản</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: Danh sách & Liên kết</li>
+                        </ul>
+                        <a href="./Lab01/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Lab 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 02: Table & List</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Thiết kế Bảng (Table)</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Danh sách lồng nhau</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: Menu đa cấp</li>
+                        </ul>
+                        <a href="./Lab02/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Lab 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 03: Frame & Form</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Sử dụng Iframe</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Tạo Form đăng ký</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: Form liên hệ nâng cao</li>
+                        </ul>
+                        <a href="./Lab03/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Lab 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 04: CSS Cơ Bản</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Selector & Color</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Font & Text Style</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: Background & Border</li>
+                        </ul>
+                        <a href="./Lab04/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Lab 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 05: CSS Box Model</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Margin & Padding</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Float & Clear</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: Positioning (Relative/Absolute)</li>
+                        </ul>
+                        <a href="./Lab05/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+                <!-- Lab 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="lab-card">
+                        <h4>Lab 06: Responsive Layout</h4>
+                        <ul>
+                            <li><i class="fa fa-check-circle"></i> Bài 1: Media Queries</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 2: Flexbox Layout</li>
+                            <li><i class="fa fa-check-circle"></i> Bài 3: CSS Grid System</li>
+                        </ul>
+                        <a href="./Lab06/" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ft-about">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="img/footer-logo.png" alt="">
+                                </a>
+                            </div>
+                            <p>Chúng tôi mang đến không gian nghỉ dưỡng tuyệt vời<br /> và dịch vụ đẳng cấp hàng đầu thế giới.</p>
+                            <div class="fa-social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-contact">
+                            <h6>Liên Hệ</h6>
+                            <ul>
+                                <li>(12) 345 67890</li>
+                                <li>info.sonahotel@gmail.com</li>
+                                <li>123 Đường ABC, Quận 1, TP. Hồ Chí Minh</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-newslatter">
+                            <h6>Bản Tin</h6>
+                            <p>Đăng ký để nhận những cập nhật và ưu đãi mới nhất.</p>
+                            <form action="#" class="fn-form">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul>
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#">Điều Khoản</a></li>
+                            <li><a href="#">Bảo Mật</a></li>
+                            <li><a href="#">Chính Sách Môi Trường</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="co-text"><p>
+  Bản quyền &copy;<script>document.write(new Date().getFullYear());</script> Bảo lưu mọi quyền | Mẫu này được thiết kế với <i class="fa fa-heart" aria-hidden="true"></i> bởi <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Tìm kiếm tại đây.....">
+            </form>
+        </div>
+    </div>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

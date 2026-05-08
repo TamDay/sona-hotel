@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sona | <%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #dfa974;
+            --dark-bg: #19191a;
+            --sidebar-width: 260px;
+        }
+
+        body {
+            font-family: 'Cabin', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: var(--dark-bg);
+            color: white;
+            position: fixed;
+            padding-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            max-width: 150px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-menu li a {
+            color: #bdc3c7;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar-menu li a i {
+            margin-right: 15px;
+            font-size: 18px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .sidebar-menu li a:hover, .sidebar-menu li.active a {
+            background-color: rgba(223, 169, 116, 0.1);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        .icon-rooms { background: rgba(223, 169, 116, 0.1); color: var(--primary-color); }
+        .icon-labs { background: rgba(52, 152, 219, 0.1); color: #3498db; }
+        .icon-bookings { background: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+
+        .stat-info h3 {
+            margin: 0;
+            font-size: 14px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-info p {
+            margin: 5px 0 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-bg);
+        }
+
+        /* Recent Activity Table */
+        .card {
+            background: white;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 30px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        .table thead th {
+            background: #f8f9fa;
+            border: none;
+            color: #7f8c8d;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            padding: 15px;
+        }
+
+        .table tbody td {
+            padding: 15px;
+            vertical-align: middle;
+            border-top: 1px solid #f1f1f1;
+            color: #34495e;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-online { background: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+        .status-offline { background: rgba(231, 76, 60, 0.1); color: #e74c3c; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/img/logo.png" alt="Sona Logo">
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="/admin">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Tổng Quan</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/rooms">
+                    <i class="fa fa-bed"></i>
+                    <span>Quản Lý Phòng</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/labs">
+                    <i class="fa fa-flask"></i>
+                    <span>Quản Lý Lab</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/bookings">
+                    <i class="fa fa-calendar"></i>
+                    <span>Đơn Đặt Phòng</span>
+                </a>
+            </li>
+            <li style="margin-top: 50px;">
+                <a href="/index.html">
+                    <i class="fa fa-arrow-left"></i>
+                    <span>Về Trang Chủ</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Chào mừng trở lại, Admin!</h1>
+            <div class="user-profile">
+                <span style="font-weight: 600;">Quản Trị Viên</span>
+                <i class="fa fa-user-circle" style="font-size: 30px; margin-left: 10px; color: var(--primary-color);"></i>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon icon-rooms">
+                    <i class="fa fa-bed"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Tổng Số Phòng</h3>
+                    <p><%= roomCount %></p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-labs">
+                    <i class="fa fa-flask"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Tổng Số Lab</h3>
+                    <p><%= labCount %></p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon icon-bookings">
+                    <i class="fa fa-calendar-check-o"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Đơn Đặt Mới</h3>
+                    <p><%= bookingCount %></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Table -->
+        <div class="card">
+            <h2>Hoạt Động Gần Đây</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Khách Hàng</th>
+                        <th>Loại Phòng</th>
+                        <th>Ngày Đặt</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nguyễn Văn A</td>
+                        <td>Deluxe Room</td>
+                        <td>08/05/2026</td>
+                        <td><span class="status-badge status-online">Hoàn tất</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark">Chi tiết</button></td>
+                    </tr>
+                    <tr>
+                        <td>Trần Thị B</td>
+                        <td>Premium Room</td>
+                        <td>07/05/2026</td>
+                        <td><span class="status-badge status-offline">Đang chờ</span></td>
+                        <td><button class="btn btn-sm btn-outline-dark">Chi tiết</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

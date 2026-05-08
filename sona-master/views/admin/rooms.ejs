@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sona Admin | <%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-color: #dfa974; --dark-bg: #19191a; --sidebar-width: 260px; }
+        body { font-family: 'Cabin', sans-serif; background-color: #f4f7f6; margin: 0; display: flex; }
+        .sidebar { width: var(--sidebar-width); height: 100vh; background-color: var(--dark-bg); color: white; position: fixed; padding-top: 20px; }
+        .sidebar .logo { text-align: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu li a { color: #bdc3c7; padding: 15px 25px; display: flex; align-items: center; text-decoration: none; transition: 0.3s; border-left: 4px solid transparent; }
+        .sidebar-menu li a i { margin-right: 15px; font-size: 18px; width: 25px; text-align: center; }
+        .sidebar-menu li a:hover, .sidebar-menu li.active a { background-color: rgba(223, 169, 116, 0.1); color: var(--primary-color); border-left-color: var(--primary-color); }
+        .main-content { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); padding: 40px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .card { background: white; border-radius: 15px; border: none; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 30px; }
+        .btn-add { background: var(--primary-color); color: white; font-weight: 600; border: none; padding: 10px 20px; border-radius: 5px; }
+        .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .status-available { background: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+        .status-booked { background: rgba(231, 76, 60, 0.1); color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"><img src="/img/logo.png" alt="Sona" style="max-width: 150px;"></div>
+        <ul class="sidebar-menu">
+            <li><a href="/admin"><i class="fa fa-dashboard"></i><span>Tổng Quan</span></a></li>
+            <li class="active"><a href="/admin/rooms"><i class="fa fa-bed"></i><span>Quản Lý Phòng</span></a></li>
+            <li><a href="/admin/labs"><i class="fa fa-flask"></i><span>Quản Lý Lab</span></a></li>
+            <li><a href="/admin/bookings"><i class="fa fa-calendar"></i><span>Đơn Đặt Phòng</span></a></li>
+            <li style="margin-top: 50px;"><a href="/index.html"><i class="fa fa-arrow-left"></i><span>Về Trang Chủ</span></a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Quản Lý Danh Sách Phòng</h1>
+            <button class="btn-add"><i class="fa fa-plus"></i> Thêm Phòng Mới</button>
+        </div>
+        <div class="card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Phòng</th>
+                        <th>Loại Giường</th>
+                        <th>Giá Tiền</th>
+                        <th>Trạng Thái</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% rooms.forEach(room => { %>
+                    <tr>
+                        <td>#<%= room.id %></td>
+                        <td><strong><%= room.name %></strong></td>
+                        <td><%= room.type %></td>
+                        <td><%= room.price %></td>
+                        <td>
+                            <span class="status-badge <%= room.status === 'Còn trống' ? 'status-available' : 'status-booked' %>">
+                                <%= room.status %>
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-info text-white"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
