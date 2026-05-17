@@ -28,10 +28,14 @@ let rooms = [
 ];
 
 let labs = [
-    { id: 1, name: 'Lab 01', topic: 'HTML Cơ Bản', subitems: ['Bài 1: Cấu trúc', 'Bài 2: Thẻ văn bản'], status: 'Hoàn thành' },
-    { id: 2, name: 'Lab 02', topic: 'Table & List', subitems: ['Bài 1: Bảng', 'Bài 2: Danh sách'], status: 'Hoàn thành' },
-    { id: 3, name: 'Lab 03', topic: 'Frame & Form', subitems: ['Bài 1: Iframe', 'Bài 2: Form'], status: 'Đang làm' },
-    { id: 4, name: 'Lab 04', topic: 'CSS Cơ Bản', subitems: ['Bài 1: Selector', 'Bài 2: Color'], status: 'Chưa bắt đầu' }
+    { id: 1, name: 'Lab 01', topic: 'HTML Cơ Bản', subitems: ['Bài 1: Cấu trúc HTML', 'Bài 2: Thẻ văn bản', 'Bài 3: Danh sách & Liên kết'], status: 'Hoàn thành' },
+    { id: 2, name: 'Lab 02', topic: 'Table & List', subitems: ['Bài 1: Thiết kế Bảng', 'Bài 2: Danh sách lồng nhau', 'Bài 3: Menu đa cấp'], status: 'Hoàn thành' },
+    { id: 3, name: 'Lab 03', topic: 'Frame & Form', subitems: ['Bài 1: Sử dụng Iframe', 'Bài 2: Tạo Form đăng ký', 'Bài 3: Form liên hệ nâng cao'], status: 'Hoàn thành' },
+    { id: 4, name: 'Lab 04', topic: 'CSS Cơ Bản', subitems: ['Bài 1: Selector & Color', 'Bài 2: Font & Text Style', 'Bài 3: Background & Border'], status: 'Hoàn thành' },
+    { id: 5, name: 'Lab 05', topic: 'CSS Box Model', subitems: ['Bài 1: Margin & Padding', 'Bài 2: Float & Clear', 'Bài 3: Positioning'], status: 'Hoàn thành' },
+    { id: 6, name: 'Lab 06', topic: 'Responsive Layout', subitems: ['Bài 1: Media Queries', 'Bài 2: Flexbox Layout', 'Bài 3: CSS Grid System'], status: 'Hoàn thành' },
+    { id: 7, name: 'Lab 07', topic: 'Form & Cart JS', subitems: ['Bài 1: Form Validation', 'Bài 2: Shopping Cart'], status: 'Hoàn thành' },
+    { id: 8, name: 'Lab 08', topic: 'Product Page JS', subitems: ['Bài 1: Product Grid', 'Bài 2: Detail Slider'], status: 'Hoàn thành' }
 ];
 
 let bookings = [
